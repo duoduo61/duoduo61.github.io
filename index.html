@@ -293,8 +293,8 @@
         <div class="right-section">
             <div class="top-right">
                 <div class="card quote-card-right">
-                    <p>好男儿胸怀像大海</p>
-                    <p class="author">-「 曾经的你 」</p>
+                    <p id="quote-text"></p>
+                    <p class="author" id="quote-author"></p>
                 </div>
 
                 <div class="card time-card">
@@ -314,24 +314,12 @@
                     <span>博客</span>
                 </div>
                 <div class="nav-btn" onclick="openLink('https://example.com')">
-                    <i class="fa-solid fa-cloud"></i>
-                    <span>网盘</span>
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>资源</span>
                 </div>
                 <div class="nav-btn" onclick="openLink('https://example.com')">
-                    <i class="fa-brands fa-bilibili"></i>
-                    <span>b站</span>
-                </div>
-                <div class="nav-btn" onclick="openLink('https://example.com')">
-                    <i class="fa-solid fa-person-running"></i>
-                    <span>冲刺</span>
-                </div>
-                <div class="nav-btn" onclick="openLink('https://example.com')">
-                    <i class="fa-solid fa-compass"></i>
-                    <span>搜索</span>
-                </div>
-                <div class="nav-btn" onclick="openLink('https://example.com')">
-                    <i class="fa-solid fa-fire"></i>
-                    <span>今日热榜</span>
+                    <i class="fa-solid fa-gamepad"></i>
+                    <span>游戏</span>
                 </div>
             </div>
         </div>
@@ -342,6 +330,16 @@
     </footer>
 
     <script>
+        // ========== 自定义句子配置区（可自行增删修改） ==========
+        const quoteList = [
+            { text: "好男儿胸怀像大海", author: "「 曾经的你 」" },
+            { text: "曾梦想仗剑走天涯，看一看世界的繁华", author: "「 曾经的你 」" },
+            { text: "没有什么能够阻挡，你对自由的向往", author: "「 蓝莲花 」" },
+            { text: "生活不止眼前的苟且，还有诗和远方的田野", author: "「 生活不止眼前的苟且 」" },
+            { text: "谁画出这天地，又画下我和你", author: "「 旅行 」" },
+            { text: "当你低头的瞬间，才发觉脚下的路", author: "「 蓝莲花 」" }
+        ];
+
         // 时间更新函数
         function updateTime() {
             const now = new Date();
@@ -357,9 +355,20 @@
             document.getElementById('time').textContent = `${hours}:${minutes}:${seconds}`;
         }
 
+        // 随机显示句子函数
+        function renderRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quoteList.length);
+            const currentQuote = quoteList[randomIndex];
+            document.getElementById('quote-text').textContent = currentQuote.text;
+            document.getElementById('quote-author').textContent = `- ${currentQuote.author}`;
+        }
+
         // 初始化时间并每秒更新
         updateTime();
         setInterval(updateTime, 1000);
+
+        // 页面加载时渲染随机句子
+        renderRandomQuote();
 
         // 跳转链接函数
         function openLink(url) {
@@ -368,6 +377,3 @@
     </script>
 </body>
 </html>
-<p>
-<a href="https://icp.gov.moe/?keyword=20260227" target="_blank">萌ICP备20260227号</a>
-</p>
