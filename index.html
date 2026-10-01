@@ -1,1 +1,237 @@
-博客已更新至duoduo61.de5.net
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5;url=https://duoduo61.de5.net/">
+    <title>DuoDuo's Page - 网站迁移中</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://duoduo666.de5.net/picture/bg.avif') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .migration-container {
+            width: 100%;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            object-fit: cover;
+        }
+
+        .title {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 2.2rem;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(100, 180, 255, 0.5);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            text-align: center;
+        }
+
+        .migration-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #63b3ed;
+        }
+
+        .migration-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .migration-desc {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .migration-desc .highlight {
+            color: #63b3ed;
+            font-weight: 600;
+        }
+
+        .migration-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(99, 179, 237, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(99, 179, 237, 0.5);
+            border-radius: 10px;
+            padding: 15px 35px;
+            color: #fff;
+            font-size: 1.1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .migration-btn:hover {
+            background: rgba(99, 179, 237, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(99, 179, 237, 0.3);
+        }
+
+        .old-version h3 {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            text-align: left;
+        }
+
+        .old-link {
+            display: flex;
+            justify-content: center;
+        }
+
+        .old-link .migration-btn {
+            padding: 12px 25px;
+            font-size: 1rem;
+        }
+
+        .countdown {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 15px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            opacity: 0.7;
+            text-align: center;
+        }
+
+        footer a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .title {
+                font-size: 1.8rem;
+            }
+
+            .migration-title {
+                font-size: 1.3rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="migration-container">
+        <div class="header">
+            <img src="https://picsum.photos/200/200" alt="头像" class="avatar">
+            <div class="title">Duoduo's Page</div>
+        </div>
+
+        <div class="card">
+            <div class="migration-icon">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            </div>
+            <div class="migration-title">网站已迁移</div>
+            <div class="migration-desc">
+                本站内容已全部迁移至新站点<br>
+                <span class="highlight">https://duoduo61.de5.net/</span><br>
+                将在 <span id="countdown">5</span> 秒后自动跳转...
+            </div>
+            <a href="https://duoduo61.de5.net/" class="migration-btn">
+                <i class="fa-solid fa-external-link-alt"></i>
+                立即前往新站
+            </a>
+        </div>
+
+        <div class="card old-version">
+            <h3><i class="fa-solid fa-clock-rotate-left"></i> 旧版存档</h3>
+            <div class="old-link">
+                <a href="https://duoduo666.de5.net/index_old.html" class="migration-btn" target="_blank">
+                    <i class="fa-solid fa-file-code"></i>
+                    访问旧版页面
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Copyright © 2025 - 2026 @多多
+        <a href="https://icp.gov.moe/?keyword=20260227" target="_blank">萌ICP备20260227号</a>
+        |
+        <a href="https://duoduo666.de5.net/copyright/" target="_blank">免责声明</a>
+    </footer>
+
+    <script>
+        let count = 5;
+        const countdownEl = document.getElementById('countdown');
+
+        const timer = setInterval(() => {
+            count--;
+            if (countdownEl) {
+                countdownEl.textContent = count;
+            }
+            if (count <= 0) {
+                clearInterval(timer);
+                window.location.href = 'https://duoduo61.de5.net/';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
